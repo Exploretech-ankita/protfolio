@@ -20,7 +20,7 @@ body
 {
     width: 250px;
     height: 250px;
-    background-color: black;
+    background-color: transparent;
     float: left;
 }
 #profile
