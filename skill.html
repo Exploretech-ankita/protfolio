@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tech Fields Selection</title>
+  <link rel="stylesheet" href="skill.css"> <!-- External CSS file -->
+</head>
+<body>
+
+  <h1>The fields I have worked on</h1>
+
+  <div class="menu">
+    <a href="#webdev">
+      <div class="card">
+        <h2>Web Development</h2>
+        <p>Built multiple responsive websites using HTML, CSS, JavaScript, and React.</p>
+      </div>
+    </a>
+
+    <a href="#iot">
+      <div class="card">
+        <h2>IoT</h2>
+        <p>Connect the world through smart devices and real-time data.</p>
+      </div>
+    </a>
+
+    <a href="#aiml">
+      <div class="card">
+        <h2>AI / ML</h2>
+        <p>Train intelligent systems to think, learn, and evolve.</p>
+      </div>
+    </a>
+  </div>
+
+  
+
+  <!-- === SLIDES === -->
+ <section id="webdev" class="slide">
+  <h2>Web Development</h2>
+  I have designed and developed several responsive websites using HTML, CSS, and JavaScript, and <br> built interactive user interfaces with React.
+   My projects demonstrate my skills in responsive design, UI/UX optimization, and modern front-end development workflows.
+   <br>
+  <div class="skills">
+    <div class="circle" data-percent="90">
+      <svg>
+        <circle cx="60" cy="60" r="50"></circle>
+        <circle cx="60" cy="60" r="50"></circle>
+      </svg>
+      <div class="number">90%</div>
+      <p>HTML</p>
+    </div>
+
+    <div class="circle" data-percent="85">
+      <svg>
+        <circle cx="60" cy="60" r="50"></circle>
+        <circle cx="60" cy="60" r="50"></circle>
+      </svg>
+      <div class="number">85%</div>
+      <p>CSS</p>
+    </div>
+
+    <div class="circle" data-percent="50">
+      <svg>
+        <circle cx="60" cy="60" r="50"></circle>
+        <circle cx="60" cy="60" r="50"></circle>
+      </svg>
+      <div class="number">50%</div>
+      <p>JavaScript</p>
+    </div>
+
+    <div class="circle" data-percent="30">
+      <svg>
+        <circle cx="60" cy="60" r="50"></circle>
+        <circle cx="60" cy="60" r="50"></circle>
+      </svg>
+      <div class="number">30%</div>
+      <p>React</p>
+    </div>
+  </div>
+  <br>
+  <br>
+  <a href="#" class="back">⬅ Back</a>
+</section>
+
+ <section id="iot" class="slide">
+  <h2>Internet of Things (IoT)</h2>
+
+  <!-- IoT Slideshow -->
+  <div class="iot-slideshow">
+    <div class="iot-slide active" id="slide1">
+      <h3>Sensors & Data</h3>
+      <p>Learn how sensors collect data from the environment — temperature, distance, motion, and more — and send it to microcontrollers.</p>
+      <button class="next-btn" data-next="slide2">Next ➜</button>
+    </div>
+
+    <div class="iot-slide" id="slide2">
+      <h3>ESP32 & Devices</h3>
+      <p>Build smart devices using ESP32 and ESP8266. Connect them to Wi-Fi and send real-time data using WebSockets or MQTT.</p>
+      <button class="prev-btn" data-prev="slide1">⬅ Back</button>
+      <button class="next-btn" data-next="slide3">Next ➜</button>
+    </div>
+
+    <div class="iot-slide" id="slide3">
+      <h3>Cloud & Dashboards</h3>
+      <p>Store IoT data on the cloud and visualize it with dashboards like ThingsBoard, Firebase, or Node-RED.</p>
+      <button class="prev-btn" data-prev="slide2">⬅ Back</button>
+      <a href="#" class="back main-back">⬅ Exit</a>
+    </div>
+  </div>
+</section>
+
+
+  <section id="aiml" class="slide">
+    <h2>Artificial Intelligence & Machine Learning</h2>
+    <p>
+      AI and ML empower systems to analyze data, learn from it, and make intelligent decisions. Explore neural networks, 
+      computer vision, and natural language processing to build the future.
+    </p>
+    <a href="#" class="back">⬅ Back</a>
+  </section>
+  <footer id="footer">
+<a href="index.html"><button id="prev" class="commun">&#8592;   back</button></a>
+    <a href="project.html"><button id="next" class="commun">Projects    &#8594;</button></a>
+    </footer>
+</body>
+<script>
+  const circles = document.querySelectorAll('.circle');
+
+  circles.forEach(circle => {
+    const percent = +circle.getAttribute('data-percent');
+    const svgCircle = circle.querySelector('circle:last-child');
+    const numberEl = circle.querySelector('.number');
+    const radius = 50;
+    const circumference = 2 * Math.PI * radius;
+
+    let current = 0;
+
+    const updateCircle = () => {
+      const offset = circumference - (current / 100) * circumference;
+      svgCircle.style.strokeDashoffset = offset;
+      numberEl.textContent = `${current}%`;
+    };
+
+    // Animate fill and number
+    const animate = () => {
+      if (current < percent) {
+        current++;
+        updateCircle();
+        requestAnimationFrame(animate);
+      }
+    };
+
+    // Reset first
+    svgCircle.style.strokeDasharray = circumference;
+    svgCircle.style.strokeDashoffset = circumference;
+
+    // Start animation when the WebDev section is visible
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animate();
+          observer.disconnect();
+        }
+      });
+    });
+
+    observer.observe(circle);
+  });
+  // IoT slideshow logic
+  const nextButtons = document.querySelectorAll('.next-btn');
+  const prevButtons = document.querySelectorAll('.prev-btn');
+
+  nextButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const currentSlide = btn.parentElement;
+      const nextSlideId = btn.getAttribute('data-next');
+      const nextSlide = document.getElementById(nextSlideId);
+
+      currentSlide.classList.remove('active');
+      nextSlide.classList.add('active');
+    });
+  });
+
+  prevButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const currentSlide = btn.parentElement;
+      const prevSlideId = btn.getAttribute('data-prev');
+      const prevSlide = document.getElementById(prevSlideId);
+
+      currentSlide.classList.remove('active');
+      prevSlide.classList.add('active');
+    });
+  });
+
+</script>
+
+
+</html>
