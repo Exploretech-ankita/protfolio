@@ -3,16 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <link rel="stylesheet" href="project.css">
+    <title>Document</title>
 </head>
 <body>
- <div id="main_para">
-<ol>
+    <div class="contact_outer">
+       <ol>
     <li>SBH(Smart Dustbin)</li>
     <li>Explore (Smart Trolley)</li>
 </ol>
- </div>
-    <a href="protfolio.html"><button id="prev" class="commun">&#8592;   back</button></a>
+    <a href="skill.html"><button id="prev" class="commun">&#8592;   back</button></a>
+    </div>
 </body>
 </html>
+    <script>
+
+// Create it once
+const clickSound = new Audio("click_sound_skill_to_project.mp3");
+clickSound.preload = "auto";
+clickSound.volume = 0.3;
+document.getElementById("prev").addEventListener("click", function(e) {
+    e.preventDefault();
+
+    clickSound.currentTime = 0;
+    clickSound.play();
+
+    clickSound.onended = () => {
+        window.location.href = "skill.html";
+    };
+});
+
+</script>
