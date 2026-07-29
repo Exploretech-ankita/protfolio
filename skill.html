@@ -12,14 +12,14 @@
 
   <div class="menu">
     <a href="#webdev">
-      <div class="card">
+      <div class="card" id="web_card">
         <h2>Web Development</h2>
         <p>Built multiple responsive websites using HTML, CSS, JavaScript, and React.</p>
       </div>
     </a>
 
     <a href="#iot">
-      <div class="card">
+      <div class="card"  id="iot_card">
         <h2>IoT</h2>
         <p>Connect the world through smart devices and real-time data.</p>
       </div>
@@ -85,7 +85,7 @@
   </div>
   <br>
   <br>
-  <a href="#" class="back">⬅ Back</a>
+  <a href="#" class="back" id="web_back">⬅ Back</a>
 </section>
 
  <section id="iot" class="slide">
@@ -135,7 +135,7 @@
 
   <br><br>
 
-  <a href="#" class="back">⬅ Back</a>
+  <a href="#" class="back" id="iot_back">⬅ Back</a>
 </section>
   
   <footer id="footer">
@@ -209,6 +209,46 @@ document.getElementById("prev").addEventListener("click", function(e) {
 
     clickSound.onended = () => {
         window.location.href = "details.html";
+    };
+});
+document.getElementById("iot_back").addEventListener("click", function(e) {
+    e.preventDefault();
+
+    clickSound.currentTime = 0;
+    clickSound.play();
+
+    clickSound.onended = () => {
+        window.location.href = "#";
+    };
+});
+document.getElementById("web_back").addEventListener("click", function(e) {
+    e.preventDefault();
+
+    clickSound.currentTime = 0;
+    clickSound.play();
+
+    clickSound.onended = () => {
+        window.location.href = "#";
+    };
+});
+document.getElementById("web_card").addEventListener("click", function(e) {
+    e.preventDefault();
+
+    clickSound.currentTime = 0;
+    clickSound.play();
+
+    clickSound.onended = () => {
+        window.location.href = "#webdev";
+    };
+});
+document.getElementById("iot_card").addEventListener("click", function(e) {
+    e.preventDefault();
+
+    clickSound.currentTime = 0;
+    clickSound.play();
+
+    clickSound.onended = () => {
+        window.location.href = "#iot";
     };
 });
 
