@@ -74,7 +74,7 @@
       <div class="number">50%</div>
       <p>Node js</p>
     </div>
-  <div class="circle" data-percent="50">
+  <div class="circle" data-percent="20">
       <svg>
         <circle cx="60" cy="60" r="50"></circle>
         <circle cx="60" cy="60" r="50"></circle>
@@ -91,28 +91,51 @@
  <section id="iot" class="slide">
   <h2>Internet of Things (IoT)</h2>
 
-  <!-- IoT Slideshow -->
-  <div class="iot-slideshow">
-    <div class="iot-slide active" id="slide1">
-      <h3>Sensors & Data</h3>
-      <p>Learn how sensors collect data from the environment — temperature, distance, motion, and more — and send it to microcontrollers.</p>
-      <button class="next-btn" data-next="slide2">Next ➜</button>
+  <p>
+    I have worked on several IoT projects involving Arduino, ESP32, sensors,
+    machine learning, and real-time automation. My experience includes hardware
+    integration, embedded programming, and smart waste management systems.
+  </p>
+
+  <div class="iot-container">
+
+    <div class="iot-box">
+      <h3>Hardware</h3>
+      <ul>
+        <li>Arduino UNO</li>
+        <li>ESP32</li>
+        <li>Ultrasonic Sensor</li>
+        <li>IR Sensor</li>
+        <li>Moisture Sensor</li>
+        <li>Servo Motors</li>
+      </ul>
     </div>
 
-    <div class="iot-slide" id="slide2">
-      <h3>ESP32 & Devices</h3>
-      <p>Build smart devices using ESP32 and ESP8266. Connect them to Wi-Fi and send real-time data using WebSockets or MQTT.</p>
-      <button class="prev-btn" data-prev="slide1">⬅ Back</button>
-      <button class="next-btn" data-next="slide3">Next ➜</button>
+    <div class="iot-box">
+      <h3>Software</h3>
+      <ul>
+        <li>Arduino IDE</li>
+        <li>Python</li>
+        <li>OpenCV</li>
+        <li>Machine Learning</li>
+        <li>HTML/CSS Dashboard</li>
+      </ul>
     </div>
 
-    <div class="iot-slide" id="slide3">
-      <h3>Cloud & Dashboards</h3>
-      <p>Store IoT data on the cloud and visualize it with dashboards like ThingsBoard, Firebase, or Node-RED.</p>
-      <button class="prev-btn" data-prev="slide2">⬅ Back</button>
-      <a href="#" class="back main-back">⬅ Exit</a>
+    <div class="iot-box">
+      <h3>My Role</h3>
+      <p>
+        Developed the hardware, programmed Arduino,
+        integrated sensors, trained the ML model,
+        and tested the complete system.
+      </p>
     </div>
+
   </div>
+
+  <br><br>
+
+  <a href="#" class="back">⬅ Back</a>
 </section>
   
   <footer id="footer">
@@ -163,31 +186,7 @@
 
     observer.observe(circle);
   });
-  // IoT slideshow logic
-  const nextButtons = document.querySelectorAll('.next-btn');
-  const prevButtons = document.querySelectorAll('.prev-btn');
-
-  nextButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const currentSlide = btn.parentElement;
-      const nextSlideId = btn.getAttribute('data-next');
-      const nextSlide = document.getElementById(nextSlideId);
-
-      currentSlide.classList.remove('active');
-      nextSlide.classList.add('active');
-    });
-  });
-
-  prevButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const currentSlide = btn.parentElement;
-      const prevSlideId = btn.getAttribute('data-prev');
-      const prevSlide = document.getElementById(prevSlideId);
-
-      currentSlide.classList.remove('active');
-      prevSlide.classList.add('active');
-    });
-  });
+ 
 const clickSound = new Audio("click_sound_skill_to_project.mp3");
 clickSound.preload = "auto";
 clickSound.volume = 0.3;
