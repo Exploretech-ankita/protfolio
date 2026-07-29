@@ -207,76 +207,41 @@ a {
   font-size: 1em;
 }
 /* === IoT Slideshow === */
-.iot-slideshow {
-  position: relative;
-  width: 80%;
-  max-width: 700px;
-  margin: 40px auto;
-  overflow: hidden;
+.iot-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+    margin-top:40px;
+    margin-left: 50px;
 }
 
-.iot-slide {
-  position: absolute;
-  top: 0;
-  left: 100%;
-  width: 100%;
-  opacity: 0;
-  transition: all 0.7s ease;
-  background: rgba(0, 20, 40, 0.6);
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(0,186,255,0.3);
+.iot-box{
+    background:#011424;
+    color:#fff;
+    padding:25px;
+    border-radius:15px;
+    transition:.3s;
+    box-shadow: 0 0 20px rgba(0,186,255,0.4);
+    width: 300px;
 }
 
-.iot-slide.active {
-  left: 0;
-  opacity: 1;
+.iot-box:hover{
+    transform:translateY(-8px);
 }
 
-.iot-slide h3 {
-  color: #5ddcff;
-  font-size: 1.8em;
-  margin-bottom: 15px;
-  text-shadow: 0 0 8px #00baff;
+.iot-box h3{
+    color:#00d9ff;
+    margin-bottom:15px;
 }
 
-.iot-slide p {
-  color: #b0eaff;
-  line-height: 1.6;
-  margin-bottom: 20px;
+.iot-box ul{
+    padding-left:18px;
 }
 
-.next-btn, .prev-btn {
-  background: transparent;
-  border: 2px solid #00baff;
-  color: #00baff;
-  padding: 10px 20px;
-  border-radius: 6px;
-  font-family: inherit;
-  cursor: pointer;
-  transition: 0.3s;
+.iot-box li{
+    margin:8px 0;
 }
 
-.next-btn:hover, .prev-btn:hover {
-  background: #00baff;
-  color: #000;
-}
-
-.main-back {
-  display: inline-block;
-  margin-top: 20px;
-  border: 2px solid #00baff;
-  color: #00baff;
-  padding: 10px 20px;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.main-back:hover {
-  background: #00baff;
-  color: #000;
-}
 
 
 
