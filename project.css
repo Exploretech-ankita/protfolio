@@ -1,0 +1,79 @@
+body
+{
+    background-image: url(project.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 500px;
+  padding: 0px;
+    margin: 0;
+}
+#main_para
+{
+    background-image:
+        url(project_main_para.jpeg);
+        background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 500px;
+    width: 500px;
+    margin-left: 150px;
+    margin-top: 70px;
+    box-shadow: 0 0 10px #0066ffde, 
+              0 0 30px #0066ffde, 
+              0 0 60px #0066ffde;
+    border-radius: 10px;
+      animation: slideInLeft 2.5s ease-out forwards; 
+      text-align: center;
+    color: white;
+    font-size: larger;
+    font-weight: bold;
+}
+@keyframes slideInLeft
+{
+    from {
+    /* Starts completely off-screen to the left */
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+}
+#main_para {
+    display: flex;
+    justify-content: center;
+
+}
+
+#main_para ol {
+    margin: 0;
+    padding-left: 30px;
+}
+li {
+    margin-top: 150px;   /* Increase to 200px, 250px, etc. */
+}
+#prev
+{
+  float: right;
+  margin-right: 500px;
+  border-radius: 50px;
+  margin-bottom: 20px;
+}
+
+.commun
+{
+   height: 90px;
+   width: 90px;
+   
+   color: azure;
+   background-color: #052349;
+    border-style: solid;
+    border-width: 10px;
+    border-color: rgb(171, 182, 192);
+}
+.commun:hover
+{
+  box-shadow: 0 0 50px #0768a0, 0 0 70px #012591;
+}
