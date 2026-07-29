@@ -25,8 +25,8 @@
             <br>
             <span>CGPA</span> - -- 
             <br>
-            <span>Language Known</span> - 
-            <br>1.Bengali <br> 2.English <br> 3.Hindi
+            <span>Internship on</span> - 
+            <br>1.Webdev <br> 2.IOT 
             <br>
             <br>
 <a class="fb-link" href="https://www.facebook.com/yourusername" target="_blank">
@@ -106,7 +106,36 @@
 
     </div>
     
-    <a href="index.html"><button id="prev" class="commun">&#8592;   back</button></a>
+    <a href="me.html"><button id="prev" class="commun">&#8592;   back</button></a>
     <a href="skill.html"><button id="next" class="commun">skills    &#8594;</button></a>
 </body>
 </html>
+    <script>
+
+// Create it once
+const clickSound = new Audio("click_sound.mp3");
+clickSound.preload = "auto";
+clickSound.volume = 0.3;
+
+document.getElementById("next").addEventListener("click", function(e) {
+    e.preventDefault();
+
+    clickSound.currentTime = 0;
+    clickSound.play();
+
+    clickSound.onended = () => {
+        window.location.href = "skill.html";
+    };
+});
+document.getElementById("prev").addEventListener("click", function(e) {
+    e.preventDefault();
+
+    clickSound.currentTime = 0;
+    clickSound.play();
+
+    clickSound.onended = () => {
+        window.location.href = "me.html";
+    };
+});
+
+</script>

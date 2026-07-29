@@ -7,7 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    
     <div>
        <div class="all">
             <div id="profile"></div>
@@ -43,10 +42,38 @@
              My goal is to create impactful tech that improves lives and makes a difference.
              </div>
               <br>
-             <a href="index.html"><button id="prev" class="click">&#8592;   back</button></a>
-              <a href="details.html"><button id="next" class="click">About me    &#8594;</button></a>
+             <a href="protfolio.html"><button id="prev" class="click">&#8592;   back</button></a>
+            <a href="details.html"><button id="next" class="click">About me    &#8594;</button></a>
             </div>
             
     </div>
+    <script>
+const clickSound = new Audio("click_sound.mp3");
+clickSound.preload = "auto";
+clickSound.volume = 0.3;
+
+document.getElementById("next").addEventListener("click", function(e) {
+    e.preventDefault();
+
+    clickSound.currentTime = 0;
+    clickSound.play();
+
+    clickSound.onended = () => {
+        window.location.href = "details.html";
+    };
+});
+document.getElementById("prev").addEventListener("click", function(e) {
+    e.preventDefault();
+
+    clickSound.currentTime = 0;
+    clickSound.play();
+
+    clickSound.onended = () => {
+        window.location.href = "protfolio.html";
+    };
+});
+</script>
 </body>
 </html>
+
+

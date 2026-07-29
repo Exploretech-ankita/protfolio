@@ -116,7 +116,7 @@
 </section>
   
   <footer id="footer">
-<a href="protfolio.html"><button id="prev" class="commun">&#8592;   back</button></a>
+<a href="details.html"><button id="prev" class="commun">&#8592;   back</button></a>
     <a href="project.html"><button id="next" class="commun">Projects    &#8594;</button></a>
     </footer>
 </body>
@@ -188,6 +188,30 @@
       prevSlide.classList.add('active');
     });
   });
+const clickSound = new Audio("click_sound_skill_to_project.mp3");
+clickSound.preload = "auto";
+clickSound.volume = 0.3;
+
+document.getElementById("next").addEventListener("click", function(e) {
+    e.preventDefault();
+
+    clickSound.currentTime = 0;
+    clickSound.play();
+
+    clickSound.onended = () => {
+        window.location.href = "project.html";
+    };
+});
+document.getElementById("prev").addEventListener("click", function(e) {
+    e.preventDefault();
+
+    clickSound.currentTime = 0;
+    clickSound.play();
+
+    clickSound.onended = () => {
+        window.location.href = "details.html";
+    };
+});
 
 </script>
 
